@@ -36,7 +36,10 @@ public class PlacesController {
     @Path({"places/", "places"})
     public void lista() {
         List places = placesDAO.list();
-        result.use(Results.json()).withoutRoot().from(places).serialize();
+        result.use(Results.json()).withoutRoot().from(places)
+                .include("accessibilityItem")
+                .include("accessibilityItem.accessibility")
+                .serialize();
     }
 
     @Post

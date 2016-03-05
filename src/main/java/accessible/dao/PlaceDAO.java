@@ -2,7 +2,7 @@
 package accessible.dao;
 
 import accessible.model.Place;
-import accessible.template.PlaceTemplate;
+import accessible.template.*;
 import br.com.six2six.fixturefactory.Fixture;
 import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
@@ -16,7 +16,9 @@ public  class PlaceDAO {
 
     private final List<Place> list;
     
-    public PlacesDAO() {
+    public PlaceDAO() {
+        AccessibilityTemplate.load();
+        AccessibilityItemTemplate.load();
         PlaceTemplate.load();
         list = Fixture.from(Place.class).gimme(5, "valid");
     }

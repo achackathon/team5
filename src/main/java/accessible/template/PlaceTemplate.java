@@ -1,5 +1,6 @@
 package accessible.template;
 
+import accessible.model.AccessibilityItem;
 import accessible.model.Place;
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.Rule;
@@ -33,6 +34,7 @@ public class PlaceTemplate {
                 add("city", "Belo Horizonte");
                 add("country", "Brasil");
                 add("telephone", regex("(\\d{2}) \\d{4}-\\d{4}"));
+                add("accessibilityItem", has(3).of(AccessibilityItem.class, "valid"));
             }
         });
     }
