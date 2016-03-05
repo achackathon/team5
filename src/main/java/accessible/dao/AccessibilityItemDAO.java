@@ -1,6 +1,5 @@
 package accessible.dao;
 
-import accessible.model.Accessibility;
 import accessible.model.AccessibilityItem;
 import java.util.ArrayList;
 import java.util.List;

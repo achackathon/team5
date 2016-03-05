@@ -1,4 +1,3 @@
-
 package accessible.dao;
 
 import accessible.model.Accessibility;
