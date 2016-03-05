@@ -2,6 +2,7 @@ package accessible.controller;
 
 import accessible.dao.CommentaryDAO;
 import accessible.model.Commentary;
+import br.com.caelum.vraptor.Consumes;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
@@ -33,28 +34,30 @@ public class CommentaryController {
     }
 
     @Get
-    @Path({"commentary/", "commentary"})
+    @Path(value = {"commentary/", "commentary"}, priority = Path.LOW)
     public void list() {
         List commentaries = commentaryDAO.list();
         result.use(Results.json()).withoutRoot().from(commentaries).serialize();
     }
 
     @Post
-    @Path({"commentary/", "commentary"})
+    @Path(value = {"commentary/", "commentary"}, priority = Path.LOW)
+    @Consumes("application/json")
     public void insert(Commentary commentary) {
         commentaryDAO.insert(commentary);
         result.nothing();
     }
 
     @Get
-    @Path({"commentary/{id}"})
+    @Path(value = {"commentary/{id}/"}, priority = Path.HIGH)
     public void load(Integer id) {
         Commentary commentary = commentaryDAO.load(id);
         result.use(Results.json()).from(commentary).serialize();
     }
 
     @Post
-    @Path({"commentary/{id}"})
+    @Consumes("application/json")
+    @Path(value = {"commentary/{id}/"}, priority = Path.HIGH)
     public void update(Commentary commentary, Integer id) {
         commentaryDAO.update(commentary, id);
     }

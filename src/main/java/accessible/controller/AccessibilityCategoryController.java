@@ -2,6 +2,7 @@ package accessible.controller;
 
 import accessible.dao.AccessibilityCategoryDAO;
 import accessible.model.AccessibilityCategory;
+import br.com.caelum.vraptor.Consumes;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
@@ -33,28 +34,30 @@ public class AccessibilityCategoryController {
     }
 
     @Get
-    @Path({"accessibilityCategory/", "accessibilityCategory"})
+    @Path(value = {"accessibilityCategory/", "accessibilityCategory"}, priority = Path.LOW)
     public void list() {
         List accessibilityCategories = accessibilityCategoryDAO.list();
         result.use(Results.json()).withoutRoot().from(accessibilityCategories).serialize();
     }
 
     @Post
-    @Path({"accessibilityCategory/", "accessibilityCategory"})
+    @Path(value = {"accessibilityCategory/", "accessibilityCategory"}, priority = Path.LOW)
+    @Consumes("application/json")
     public void insert(AccessibilityCategory accessibilityCategory) {
         accessibilityCategoryDAO.insert(accessibilityCategory);
         result.nothing();
     }
 
     @Get
-    @Path({"accessibilityCategory/{id}"})
+    @Path(value = {"accessibilityCategory/{id}/"}, priority = Path.HIGH)
     public void load(Integer id) {
         AccessibilityCategory accessibilityCategory = accessibilityCategoryDAO.load(id);
         result.use(Results.json()).from(accessibilityCategory).serialize();
     }
 
     @Post
-    @Path({"accessibilityCategory/{id}"})
+    @Consumes("application/json")
+    @Path(value = {"accessibilityCategory/{id}/"}, priority = Path.HIGH)
     public void update(AccessibilityCategory accessibilityCategory, Integer id) {
         accessibilityCategoryDAO.update(accessibilityCategory, id);
     }
