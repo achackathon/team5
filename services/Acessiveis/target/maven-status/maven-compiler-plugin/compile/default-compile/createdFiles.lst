@@ -1,0 +1,8 @@
+accessible/model/AccessibiltyCategory.class
+accessible/model/Accessibility.class
+accessible/model/PlaceType.class
+accessible/model/Place.class
+accessible/model/Commentary.class
+accessible/model/AccessibilityItem.class
+accessible/PlacesController.class
+accessible/PlacesDAO.class
