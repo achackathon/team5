@@ -2,6 +2,7 @@ package accessible.controller;
 
 import accessible.dao.AccessibilityCategoryDAO;
 import accessible.model.AccessibilityCategory;
+import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
@@ -14,6 +15,7 @@ import javax.inject.Inject;
  *
  * @author jfranco
  */
+@Controller
 public class AccessibilityCategoryController {
     
     private final Result result;
