@@ -7,6 +7,7 @@ package accessible.model;
 public class Place {
     
     private Integer id;
+    private String name;
     private String description;
     private String address;
     private String city;
@@ -155,6 +156,20 @@ public class Place {
      */
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
     }
     
 }
