@@ -32,9 +32,9 @@
                         <span class="fa fa-plus"></span>
                     </button>
                 </label>
-                <div ng-show="showAddCategory" class="form-inline">
+                <div ng-if="showAddCategory" class="form-inline">
                     <input type="text" class="form-control" id="connectToCategory" placeholder="Categoria" ng-model="newItem.newCategory">
-                    <button class="btn btn-primary">Adicionar</button>
+                    <button class="btn btn-primary" ng-click="addCategory();">Adicionar</button>
                     <button class="btn btn-danger" ng-click="cancelAddCategory();">Cancelar</button>
                 </div>
 
@@ -60,12 +60,12 @@
                     <input type="checkbox" ng-model="item.checked" ng-change="handleNewItem(item)"> {{item.name}}
                 </label>
                 <!-- TODO trocar para cinco estrelas -->
-                <input type="number" class="form-control" placeholder="valor de 0 a 5" min="0" max="5" ng-model="item.rate">
+                <input type="number" class="form-control" placeholder="valor de 0 a 5" min="0" max="5" ng-model="item.grade">
             </div>
         </div>
 
         <hr>
 
-      <button type="submit" class="btn btn-default">Adicionar</button>
+      <button type="submit" class="btn btn-default" ng-click="addEstablishment()">Adicionar</button>
     </form>
 </div>

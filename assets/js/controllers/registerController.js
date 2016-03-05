@@ -1,44 +1,15 @@
 (function(eaApp, angular, $) {
 	'use strict';
 
-	eaApp.controller('registerController', function($scope, registerService) {
+	eaApp.controller('registerController', function($scope, registerService, accessibilityItems, categories) {
 		$scope.showAddNewItem = false;
 
-		$scope.accessibilityItems = [
-			{
-				name: 'rampa'
-			},
-			{
-				name: 'menu em braile'
-			},
-			{
-				name: 'garçom que conhece libras'
-			},
-			{
-				name: 'garçom que conhece libras'
-			},
-			{
-				name: 'garçom que conhece libras'
-			},
-			{
-				name: 'garçom que conhece libras'
-			}
-		];
+		$scope.accessibilityItems = accessibilityItems.data;
 
-		$scope.categories = [
-			{
-				name: 'mobilidade reduzida'
-			}, 
-			{
-				name: 'deficiente visual'
-			}, 
-			{
-				name: 'deficiente auditivo'
-			}
-		];
+		$scope.categories = categories.data;
 
 		$scope.obj = {
-			accessibilityItems: []
+			accessibilityItem: []
 		};
 		$scope.newItem = {
 			categories: []
@@ -62,6 +33,8 @@
 
 		$scope.cancelAddCategory = function() {
 			$scope.showAddCategory = false;
+
+			$scope.newItem.newCategory = "";
 		};
 		$scope.displayAddCategory = function() {
 			$scope.showAddCategory = true;
@@ -69,7 +42,7 @@
 
 		$scope.handleNewItem = function(item) {
 			if(item.checked) {
-				$scope.obj.accessibilityItems.push(item);
+				$scope.obj.accessibilityItem.push(item);
 			}
 			else {
 				$scope.removeItem(item.name);
@@ -95,26 +68,57 @@
 		};
 
 		$scope.removeItem = function(name) {
-			var i = $scope.obj.accessibilityItems.length;
+			var i = $scope.obj.accessibilityItem.length;
 
 			while(i--) {
-				if($scope.obj.accessibilityItems[i].name == name) {
-					$scope.obj.accessibilityItems.splice(i, 1);
+				if($scope.obj.accessibilityItem[i].name == name) {
+					$scope.obj.accessibilityItem.splice(i, 1);
 				}
 			}
 		};
 
 		$scope.addNewItem = function() {
 			registerService.addNewItem($scope.newItem).success(function(data) {
-
-				$scope.accessibilityItems.unshift({
+				var item = {
 					name: $scope.newItem.name,
 					checked: true
-				});
+				};
+
+				$scope.accessibilityItems.unshift(item);
+				$scope.handleNewItem(item);
 
 				$scope.cancelAddNewItem();
 			});
 		};
+
+		$scope.addCategory = function() {
+			registerService.addCategory({name: $scope.newItem.newCategory}).success(function(data) {
+
+				$scope.categories.unshift({
+					name: $scope.newItem.newCategory,
+					checked: true
+				});
+
+				$scope.cancelAddCategory();
+			});
+		};
+
+		$scope.addEstablishment = function() {
+			var i;
+
+			for(i=0; i<$scope.obj.accessibilityItem.length; i++) {
+				$scope.obj.accessibilityItem[i].accessibility = $scope.obj.accessibilityItem[i].name;
+			}
+			registerService.addEstablishment($scope.obj).success(function(data) {
+
+				$scope.categories.unshift({
+					name: $scope.newItem.newCategory,
+					checked: true
+				});
+
+				$scope.cancelAddCategory();
+			});
+		}
 	});
 
 })(angular.module('eaApp'), window.angular, window.jQuery);

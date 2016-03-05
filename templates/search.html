@@ -18,24 +18,28 @@
         <h2>Pesquisar estabelecimento</h2>
 
         <form>
-            <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" class="form-control" id="name" placeholder="Nome">
+          <div class="form-group">
+            <div class="form-group col-md-10 col-xs-10 col-sm-10 col-lg-10">
+                <label for="name">Pesquisar</label>
+                <input type="text" class="form-control" id="name" placeholder="Pesquisar">
             </div>
+            <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2">
+              <div class="fa fa-search" aria-hidden="true"></div>
+            </div>
+          </div>
 
             <hr>
-            <div class="form-group">
-                <button class="btn btn-default">Pesquisar</button>
-            </div>
         </form>
         <div ng-repeat="n in estabelecimentos">
-          <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-            <div class="status">
-                <div class="bcRed dot-{{n.rating}}">
-                </div>
+          <a href="#{{n.id}}">
+            <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 linha">
+              <div class="status">
+                  <div class="bcRed dot-{{n.rating}}">
+                  </div>
+              </div>
+              {{n.nome}} - {{n.tipo}}
             </div>
-            <a href="#{{n.id}}">{{n.nome}} - {{n.tipo}}</a>
-          </div>
+          </a>
         </div>
     </div>
 
