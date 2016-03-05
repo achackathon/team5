@@ -4,7 +4,7 @@ package accessible.model;
  *
  * @author jfranco
  */
-public class Places {
+public class Place {
     
     private Integer id;
     private String description;

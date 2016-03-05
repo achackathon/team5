@@ -14,19 +14,4 @@
         <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
     </listener>
     
-    <context-param>
-        <param-name>vraptor.subreports.path</param-name>
-        <param-value>/WEB-INF/reports/Vli</param-value>
-    </context-param>
-
-    <context-param>
-        <param-name>vraptor.images.path</param-name>
-        <param-value>/WEB-INF/reports/Vli</param-value>
-    </context-param>
-    
-    <context-param>
-        <param-name>vraptor.reports.path</param-name>
-        <param-value>/WEB-INF/reports/Vli</param-value>
-    </context-param>
-    
 </web-app>
