@@ -8,14 +8,14 @@ public class Place {
     
     private Integer id;
     private String description;
-    private String adress;
+    private String address;
     private String city;
     private String country;
     private String telephone;
     private String latitude;
     private String longitude;
     private AccessibilityItem accessibilityItem;
-    private PlaceType placeType;
+    private Category category;
 
     /**
      * @return the id
@@ -46,17 +46,17 @@ public class Place {
     }
 
     /**
-     * @return the adress
+     * @return the address
      */
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
     /**
-     * @param adress the adress to set
+     * @param address the address to set
      */
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     /**
@@ -130,17 +130,17 @@ public class Place {
     }
 
     /**
-     * @return the placeType
+     * @return the category
      */
-    public PlaceType getPlaceType() {
-        return placeType;
+    public Category getCategory() {
+        return category;
     }
 
     /**
-     * @param placeType the placeType to set
+     * @param category the category to set
      */
-    public void setPlaceType(PlaceType placeType) {
-        this.placeType = placeType;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     /**

@@ -19,15 +19,15 @@ public  class PlacesDAO {
         return list;
     }
 
-    void insert(Place place) {
+    public void insert(Place place) {
         list.add(place);
     }
 
-    Place load(Integer id) {
+    public Place load(Integer id) {
         return list.get(id);
     }
 
-    void update(Place place, Integer id) {
+    public void update(Place place, Integer id) {
         list.set(id, place);
     }
     

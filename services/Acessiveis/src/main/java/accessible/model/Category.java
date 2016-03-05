@@ -4,7 +4,7 @@ package accessible.model;
  *
  * @author jfranco
  */
-public class PlaceType {
+public class Category {
     
     private Integer id;
     private String name;
