@@ -11,7 +11,11 @@
 		.when('/search', {
 			templateUrl: 'templates/search.html',
 			controller: 'searchController',
-			resolve: {}
+			resolve: {
+				categories: function(searchService) {
+					return searchService.listCategories();
+				}
+			}
 		})
 		.when('/advancedSearch', {
 			templateUrl: 'templates/advancedSearch.html',
@@ -21,7 +25,14 @@
 		.when('/register', {
 			templateUrl: 'templates/register.html',
 			controller: 'registerController',
-			resolve: {}
+			resolve: {
+				accessibilityItems: function(registerService) {
+					return registerService.listAccessibility();
+				},
+				categories: function(registerService) {
+					return registerService.listCategories();
+				}
+			}
 		})
 		.when('/establishment/:establishmentId', {
 			templateUrl: 'templates/establishment.html',

@@ -6,7 +6,7 @@
             load: function (id) {
                 return $http.get('places/' + id + '/');
             }
-        }
+        };
     });
 
 })(angular.module('eaApp'), window.angular, window.jQuery);

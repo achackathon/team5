@@ -2,8 +2,6 @@
     'use strict';
 
     eaApp.controller('establishmentController', function ($scope, $routeParams, establishmentService) {
-        $scope.establishment = {};
-
         function _loadEstablishment(id) {
             establishmentService.load(id).success(function (data) {
                 $scope.establishment = data;
