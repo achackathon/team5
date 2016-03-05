@@ -2,6 +2,7 @@ package accessible.controller;
 
 import accessible.dao.CategoryDAO;
 import accessible.model.Category;
+import br.com.caelum.vraptor.Consumes;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
@@ -33,28 +34,30 @@ public class CategoryController {
     }
 
     @Get
-    @Path({"category/", "category"})
+    @Path(value = {"category/", "category"}, priority = Path.LOW)
     public void list() {
         List categories = categoryDAO.list();
         result.use(Results.json()).withoutRoot().from(categories).serialize();
     }
 
     @Post
-    @Path({"category/", "category"})
+    @Path(value = {"category/", "category"}, priority = Path.LOW)
+    @Consumes("application/json")
     public void insert(Category category) {
         categoryDAO.insert(category);
         result.nothing();
     }
 
     @Get
-    @Path({"category/{id}"})
+    @Path(value = {"category/{id}/"}, priority = Path.HIGH)
     public void load(Integer id) {
         Category category = categoryDAO.load(id);
         result.use(Results.json()).from(category).serialize();
     }
 
     @Post
-    @Path({"category/{id}"})
+    @Consumes("application/json")
+    @Path(value = {"category/{id}/"}, priority = Path.HIGH)
     public void update(Category category, Integer id) {
         categoryDAO.update(category, id);
     }
