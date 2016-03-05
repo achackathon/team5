@@ -21,6 +21,11 @@ public class PlaceDAO {
         AccessibilityItemTemplate.load();
         PlaceTemplate.load();
         list = Fixture.from(Place.class).gimme(5, "valid");
+        
+        for (int i = 0; i < list.size(); i++) {
+            Place place = list.get(i);
+            place.setId(i);
+        }
     }
 
     public List<Place> list() {
