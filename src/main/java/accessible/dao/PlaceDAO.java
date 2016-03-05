@@ -12,7 +12,7 @@ import javax.enterprise.context.ApplicationScoped;
  * @author Maison Chaves
  */
 @ApplicationScoped
-public  class PlacesDAO {
+public  class PlaceDAO {
 
     private final List<Place> list;
     

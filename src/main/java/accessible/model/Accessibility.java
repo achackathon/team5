@@ -1,5 +1,7 @@
 package accessible.model;
 
+import java.util.List;
+
 /**
  *
  * @author jfranco
@@ -9,7 +11,7 @@ public class Accessibility {
     private Integer id;
     private String name;
     private String description;
-    private AccessibiltyCategory accessibiltyCategory;
+    private List<AccessibiltyCategory> accessibiltyCategory;
 
     /**
      * @return the id
@@ -56,14 +58,14 @@ public class Accessibility {
     /**
      * @return the accessibiltyCategory
      */
-    public AccessibiltyCategory getAccessibiltyCategory() {
+    public List<AccessibiltyCategory> getAccessibiltyCategory() {
         return accessibiltyCategory;
     }
 
     /**
      * @param accessibiltyCategory the accessibiltyCategory to set
      */
-    public void setAccessibiltyCategory(AccessibiltyCategory accessibiltyCategory) {
+    public void setAccessibiltyCategory(List<AccessibiltyCategory> accessibiltyCategory) {
         this.accessibiltyCategory = accessibiltyCategory;
     }
    

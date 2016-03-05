@@ -1,5 +1,7 @@
 package accessible.model;
 
+import java.util.List;
+
 /**
  *
  * @author jfranco
@@ -15,8 +17,9 @@ public class Place {
     private String telephone;
     private String latitude;
     private String longitude;
-    private AccessibilityItem accessibilityItem;
+    private List<AccessibilityItem> accessibilityItem;
     private Category category;
+    private Commentary commentary;
 
     /**
      * @return the id
@@ -119,14 +122,14 @@ public class Place {
     /**
      * @return the accessibilityItem
      */
-    public AccessibilityItem getAccessibilityItem() {
+    public List<AccessibilityItem> getAccessibilityItem() {
         return accessibilityItem;
     }
 
     /**
      * @param accessibilityItem the accessibilityItem to set
      */
-    public void setAccessibilityItem(AccessibilityItem accessibilityItem) {
+    public void setAccessibilityItem(List<AccessibilityItem> accessibilityItem) {
         this.accessibilityItem = accessibilityItem;
     }
 
@@ -171,5 +174,19 @@ public class Place {
     public void setName(String name) {
         this.name = name;
     }
+
+    /**
+     * @return the commentary
+     */
+    public Commentary getCommentary() {
+        return commentary;
+    }
+
+    /**
+     * @param commentary the commentary to set
+     */
+    public void setCommentary(Commentary commentary) {
+        this.commentary = commentary;
+    } 
     
 }
