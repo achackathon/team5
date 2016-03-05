@@ -1,5 +1,7 @@
 package accessible.model;
 
+import accessible.utils.Text;
+
 /**
  *
  * @author jfranco
@@ -36,5 +38,8 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
-    
+
+    boolean filter(String filter) {
+        return name != null && Text.contains(name, filter);
+    }
 }

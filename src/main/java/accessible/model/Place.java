@@ -1,5 +1,6 @@
 package accessible.model;
 
+import accessible.utils.Text;
 import java.util.List;
 
 /**
@@ -188,5 +189,9 @@ public class Place {
     public void setCommentary(Commentary commentary) {
         this.commentary = commentary;
     } 
+
+    public boolean filter(String filter) {
+        return (name != null && Text.contains(name, filter)) || (category != null && category.filter(filter));
+    }
     
 }
