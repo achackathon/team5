@@ -2,6 +2,7 @@ package accessible.controller;
 
 import accessible.dao.PlaceDAO;
 import accessible.model.Place;
+import br.com.caelum.vraptor.Consumes;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
@@ -33,7 +34,7 @@ public class PlaceController {
     }
 
     @Get
-    @Path({"places/", "places"})
+    @Path(value = {"places/", "places"}, priority = Path.LOW)
     public void list() {
         List places = placesDAO.list();
         result.use(Results.json()).withoutRoot().from(places)
@@ -43,21 +44,23 @@ public class PlaceController {
     }
 
     @Post
-    @Path({"places/", "places"})
+    @Path(value = {"places/", "places"}, priority = Path.LOW)
+    @Consumes("application/json")
     public void insert(Place place) {
         placesDAO.insert(place);
         result.nothing();
     }
 
     @Get
-    @Path({"places/{id}"})
+    @Path(value = {"places/{id}/"}, priority = Path.HIGH)
     public void load(Integer id) {
         Place place = placesDAO.load(id);
         result.use(Results.json()).from(place).serialize();
     }
 
     @Post
-    @Path({"places/{id}"})
+    @Consumes("application/json")
+    @Path(value = {"places/{id}/"}, priority = Path.HIGH)
     public void update(Place place, Integer id) {
         placesDAO.update(place, id);
     }
