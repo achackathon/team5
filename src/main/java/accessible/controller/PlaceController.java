@@ -77,5 +77,4 @@ public class PlaceController {
                 .include("accessibilityItem.accessibility")
                 .serialize();
     }
-
 }

@@ -1,4 +1,3 @@
-
 package accessible.dao;
 
 import accessible.model.Place;
@@ -13,10 +12,10 @@ import javax.enterprise.context.ApplicationScoped;
  * @author Maison Chaves
  */
 @ApplicationScoped
-public  class PlaceDAO {
+public class PlaceDAO {
 
     private final List<Place> list;
-    
+
     public PlaceDAO() {
         AccessibilityTemplate.load();
         AccessibilityItemTemplate.load();
@@ -42,12 +41,14 @@ public  class PlaceDAO {
 
     public List<Place> search(String filter) {
         List<Place> retorno = new ArrayList<>();
-        
-        for (Place place : retorno) {
-            
+
+        for (Place place : list) {
+            if (place.filter(filter)) {
+                retorno.add(place);
+            }
         }
-        
+
         return retorno;
     }
-    
+
 }
