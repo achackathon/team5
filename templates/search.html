@@ -1,8 +1,8 @@
 <div>
     <h2>Pesquisar estabelecimento</h2>
 
-    <form class="search">
-      <div class="form-group">
+    <form class="search" style="border-bottom: 1px solid #ccc;">
+      <div class="form-group"> 
         <div class="col-md-10 col-xs-10 col-sm-10 col-lg-10">
             <input type="text" class="form-control" id="name" placeholder="Pesquisar" ng-model="searchText" ng-change="handleSearch()">
         </div>
@@ -15,14 +15,15 @@
     </form>
 
     <div class="results">
-      <div ng-repeat="n in results">
-        <a href="#{{n.id}}">
-          <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 linha">
-            <div class="status" data-toggle="tooltip" data-placement="bottom" title="{{status[n.rating]}}" tooltip>
-                <div class="bcRed dot-{{n.rating}}">
+
+      <div ng-repeat="result in results">
+        <a href="#/places/{{result.id || $index}}">
+          <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 linha result">
+            <div class="status" data-toggle="tooltip" data-placement="bottom" title="{{status[result.grade]}}" tooltip>
+                <div class="bcRed dot-{{result.grade}}">
                 </div>
             </div>
-            {{n.nome}} - {{n.tipo}}
+            {{result.name}}<span ng-if="result.category"> - </span>{{result.category}}
           </div>
         </a>
       </div>

@@ -7,7 +7,7 @@
 				return $http.get('category');
 			},
 			search: function(searchText) {
-				return $http.get('places/search/' + searchText);
+				return $http.get('places/search/' + searchText + '/');
 			}
 		}
 	});

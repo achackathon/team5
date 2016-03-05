@@ -14,7 +14,7 @@
 }
 
 .status {
-    padding: 5px 5px 0;
+    padding: 10px 20px 0;
     float: left;
 }
 
@@ -37,7 +37,13 @@
     width: 10px;
     height: 10px;
     border-radius: 5px;
-		background-color: red;
+        background-color: red;
+}
+.dot-0 {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+		background-color: gray;
 }
 
 html, body {
@@ -93,4 +99,17 @@ form.search {
 }
 .card:hover {
     box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
+}
+
+.results .result {
+    padding: 10px 0;
+    border-bottom: 1px solid #CCC;
+    font-size: 20px;
+    transition: 200ms all;
+}
+.results .result:hover {
+    background-color: #EEE;
+}
+.results .result a {
+    display: inline-block;
 }
