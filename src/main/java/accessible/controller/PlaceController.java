@@ -26,7 +26,7 @@ public class PlaceController {
         this.result = null;
         this.placesDAO = null;
     }
-    
+
     @Inject
     public PlaceController(Result result, PlaceDAO placesDAO) {
         this.result = result;
@@ -55,7 +55,10 @@ public class PlaceController {
     @Path(value = {"places/{id}/"}, priority = Path.HIGH)
     public void load(Integer id) {
         Place place = placesDAO.load(id);
-        result.use(Results.json()).from(place).serialize();
+        result.use(Results.json()).withoutRoot().from(place)
+                .include("accessibilityItem")
+                .include("accessibilityItem.accessibility")
+                .serialize();
     }
 
     @Post

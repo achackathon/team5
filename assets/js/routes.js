@@ -23,7 +23,7 @@
 			controller: 'registerController',
 			resolve: {}
 		})
-		.when('/establishment', {
+		.when('/establishment/:establishmentId', {
 			templateUrl: 'templates/establishment.html',
 			controller: 'establishmentController',
 			resolve: {}
