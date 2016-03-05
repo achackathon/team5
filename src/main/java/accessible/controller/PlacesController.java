@@ -1,6 +1,6 @@
 package accessible.controller;
 
-import accessible.dao.PlacesDAO;
+import accessible.dao.PlaceDAO;
 import accessible.model.Place;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
@@ -19,7 +19,7 @@ import javax.inject.Inject;
 public class PlacesController {
 
     private final Result result;
-    private final PlacesDAO placesDAO;
+    private final PlaceDAO placesDAO;
 
     public PlacesController() {
         this.result = null;
@@ -27,7 +27,7 @@ public class PlacesController {
     }
     
     @Inject
-    public PlacesController(Result result, PlacesDAO placesDAO) {
+    public PlacesController(Result result, PlaceDAO placesDAO) {
         this.result = result;
         this.placesDAO = placesDAO;
     }
