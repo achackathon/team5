@@ -8,6 +8,26 @@
 			controller: 'homeController',
 			resolve: {}
 		})
+		.when('/', {
+			templateUrl: 'templates/search.html',
+			controller: 'searchController',
+			resolve: {}
+		})
+		.when('/', {
+			templateUrl: 'templates/advancedSearch.html',
+			controller: 'advancedSearchController',
+			resolve: {}
+		})
+		.when('/', {
+			templateUrl: 'templates/register.html',
+			controller: 'registerController',
+			resolve: {}
+		})
+		.when('/', {
+			templateUrl: 'templates/stablishment.html',
+			controller: 'stablishmentController',
+			resolve: {}
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
