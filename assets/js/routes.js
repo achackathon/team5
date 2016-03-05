@@ -21,7 +21,14 @@
 		.when('/register', {
 			templateUrl: 'templates/register.html',
 			controller: 'registerController',
-			resolve: {}
+			resolve: {
+				accessibilityItems: function(registerService) {
+					return registerService.listAccessibility();
+				},
+				categories: function(registerService) {
+					return registerService.listCategories();
+				}
+			}
 		})
 		.when('/establishment', {
 			templateUrl: 'templates/establishment.html',
