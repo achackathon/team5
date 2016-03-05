@@ -1,6 +1,8 @@
 package accessible.dao;
 
 import accessible.model.Commentary;
+import accessible.template.CommentaryTemplate;
+import br.com.six2six.fixturefactory.Fixture;
 import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
@@ -13,6 +15,11 @@ import javax.enterprise.context.ApplicationScoped;
 public class CommentaryDAO {
     
     List<Commentary> list = new ArrayList<>();
+
+    public CommentaryDAO() {
+        CommentaryTemplate.load();
+        list = Fixture.from(Commentary.class).gimme(2, "valid");
+    }
 
     public List<Commentary> list() {
         return list;
