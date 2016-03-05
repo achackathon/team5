@@ -16,7 +16,7 @@ public  class PlaceDAO {
 
     private final List<Place> list;
     
-    public PlacesDAO() {
+    public PlaceDAO() {
         PlaceTemplate.load();
         list = Fixture.from(Place.class).gimme(5, "valid");
     }
