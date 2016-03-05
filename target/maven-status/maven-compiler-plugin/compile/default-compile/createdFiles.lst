@@ -1,0 +1,6 @@
+accessible\model\Accessibility.class
+accessible\model\AccessibilityItem.class
+accessible\PlacesController.class
+accessible\model\Place.class
+accessible\PlacesDAO.class
+accessible\model\AccessibiltyCategory.class
