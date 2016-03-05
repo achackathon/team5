@@ -1,24 +1,37 @@
-<div class="container" ng-controller="searchController">
+<div>
     <h2>Pesquisar estabelecimento</h2>
 
-    <form>
-        <div class="form-group">
-            <label for="name">Nome</label>
-            <input type="text" class="form-control" id="name" placeholder="Nome">
+    <form class="search">
+      <div class="form-group">
+        <div class="col-md-10 col-xs-10 col-sm-10 col-lg-10">
+            <input type="text" class="form-control" id="name" placeholder="Pesquisar" ng-model="searchText" ng-change="handleSearch()">
         </div>
+        <div class="col-md-2 col-xs-2 col-sm-2 col-lg-2">
+          <div class="fa fa-search" style="font-size: 20px; position: relative; top: 5px; left: -10px; "></div>
+        </div>
+      </div>
 
         <hr>
-        <div class="form-group">
-            <button class="btn btn-default">Pesquisar</button>
-        </div>
     </form>
-    <div ng-repeat="n in estabelecimentos">
-        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
-            <div class="status">
+
+    <div class="results">
+      <div ng-repeat="n in results">
+        <a href="#{{n.id}}">
+          <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 linha">
+            <div class="status" data-toggle="tooltip" data-placement="bottom" title="{{status[n.rating]}}" tooltip>
                 <div class="bcRed dot-{{n.rating}}">
                 </div>
             </div>
-            <a href="#/establishment/{{n.id}}">{{n.nome}} - {{n.tipo}}</a>
-        </div>
+            {{n.nome}} - {{n.tipo}}
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="cards">
+      <a href=""></a>
+      <div class="card" ng-repeat="card in cards" style="background-color: {{cardColors[$index%cardColors.length]}}">
+        {{card.name}}
+      </div>
     </div>
 </div>

@@ -63,3 +63,34 @@ main > * {
     flex-direction: column;
     text-align: center;
 }
+
+form.search {
+    min-height: 60px;
+}
+
+.cards {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.card {
+    flex: 1 0 150px;
+    height: 150px;
+    max-width: 150px;
+    margin: 0 .9rem 3rem;
+    border-radius: 1px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    font-size: 20px;
+    color: #FFF;
+
+    transition: 200ms all;
+    cursor: pointer;
+}
+.card:hover {
+    box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.24);
+}
