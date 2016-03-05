@@ -1,6 +1,5 @@
 package accessible.template;
 
-import accessible.model.Accessibility;
 import accessible.model.Commentary;
 import br.com.six2six.fixturefactory.Fixture;
 import br.com.six2six.fixturefactory.Rule;
