@@ -67,5 +67,15 @@ public class PlaceController {
     public void update(Place place, Integer id) {
         placesDAO.update(place, id);
     }
+    
+    @Get
+    @Path(value = {"places/search/{filter}/"}, priority = Path.HIGH)
+    public void search(String filter) {
+        List places = placesDAO.search(filter);
+        result.use(Results.json()).withoutRoot().from(places)
+                .include("accessibilityItem")
+                .include("accessibilityItem.accessibility")
+                .serialize();
+    }
 
 }

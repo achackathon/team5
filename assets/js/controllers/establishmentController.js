@@ -1,8 +1,18 @@
-(function(eaApp, angular, $) {
-	'use strict';
+(function (eaApp, angular, $) {
+    'use strict';
 
-	eaApp.controller('establishmentController', function($scope) {
-		
-	});
+    eaApp.controller('establishmentController', function ($scope, $routeParams, establishmentService) {
+        $scope.establishment = {};
+
+        function _loadEstablishment(id) {
+            establishmentService.load(id).success(function (data) {
+                $scope.establishment = data;
+            });
+        }
+
+        $scope.$on('$viewContentLoaded', function () {
+            _loadEstablishment($routeParams.establishmentId);
+        });
+    });
 
 })(angular.module('eaApp'), window.angular, window.jQuery);

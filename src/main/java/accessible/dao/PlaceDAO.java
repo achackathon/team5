@@ -4,6 +4,7 @@ package accessible.dao;
 import accessible.model.Place;
 import accessible.template.*;
 import br.com.six2six.fixturefactory.Fixture;
+import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 
@@ -37,6 +38,16 @@ public  class PlaceDAO {
 
     public void update(Place place, Integer id) {
         list.set(id, place);
+    }
+
+    public List<Place> search(String filter) {
+        List<Place> retorno = new ArrayList<>();
+        
+        for (Place place : retorno) {
+            
+        }
+        
+        return retorno;
     }
     
 }
