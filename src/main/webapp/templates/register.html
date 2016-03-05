@@ -1,0 +1,71 @@
+<div>
+    <h2>Adicionar estabelecimento</h2>
+
+    <form>
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" placeholder="Nome" ng-model="obj.name">
+        </div>
+        <div class="form-group">
+            <label for="description">Descrição</label>
+            <input type="text" class="form-control" id="description" placeholder="Descrição" ng-model="obj.description">
+        </div>
+
+        <hr>
+
+        <h4>
+            Acessibilidade
+            <button ng-hide="showAddNewItem" ng-click="displayAddNewItem();" type="button" class="btn btn-default round-button" data-toggle="tooltip" data-placement="right" title="Adicionar Novo Item" tooltip>
+                <span class="fa fa-plus" aria-hidden="true"></span>
+            </button>
+        </h4>
+        <div ng-show="showAddNewItem">
+            <div class="form-group">
+                <label for="addNewItem">Nome do item</label>
+                <input type="text" class="form-control" id="addNewItem" placeholder="Nome do item" ng-model="newItem.name">
+            </div>
+
+            <div class="form-group">
+                <label for="connectToCategory">
+                    Categorias
+                    <button ng-hide="showAddCategory" ng-click="displayAddCategory();" type="button" class="btn btn-default round-button" data-toggle="tooltip" data-placement="right" title="Adicionar Nova Categoria" tooltip>
+                        <span class="fa fa-plus"></span>
+                    </button>
+                </label>
+                <div ng-show="showAddCategory" class="form-inline">
+                    <input type="text" class="form-control" id="connectToCategory" placeholder="Categoria" ng-model="newItem.newCategory">
+                    <button class="btn btn-primary">Adicionar</button>
+                    <button class="btn btn-danger" ng-click="cancelAddCategory();">Cancelar</button>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-3 col-sm-6 col-xs-12" ng-repeat="category in categories">
+                        <label>
+                          <input type="checkbox" ng-model="category.checked" ng-change="handlerCategory(category)"> {{category.name}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-default" ng-click="addNewItem()">Adicionar</button>
+            <button class="btn btn-danger" ng-click="cancelAddNewItem();">Cancelar</button>
+            
+            <hr>
+        </div>
+
+
+        <div class="row">
+            <div class="form-group col-md-3 col-sm-6 col-xs-12" ng-repeat="item in accessibilityItems">
+                <label>
+                    <input type="checkbox" ng-model="item.checked" ng-change="handleNewItem(item)"> {{item.name}}
+                </label>
+                <!-- TODO trocar para cinco estrelas -->
+                <input type="number" class="form-control" placeholder="valor de 0 a 5" min="0" max="5" ng-model="item.rate">
+            </div>
+        </div>
+
+        <hr>
+
+      <button type="submit" class="btn btn-default">Adicionar</button>
+    </form>
+</div>

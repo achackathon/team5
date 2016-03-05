@@ -8,14 +8,20 @@
     <title>Estabelecimento Acessível</title>
 
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="assets/css/main.css" rel="stylesheet">
   </head>
   <body ng-app="eaApp">
-    <h1>Estabelecimento Acessível</h1>
+    <header class="container">
+        <a href="#/">
+            <h1>4All</h1>
+        </a>
+    </header>
   
-    <span data-toggle="tooltip" data-placement="bottom" title="bottom tooltip" tooltip>Tooltip Example</span>
-
-    <div ng-view>
-    </div>
+    <main ng-view class="container">
+    
+    </main>
   
 
     <!-- vendor libs -->
@@ -36,6 +42,10 @@
     <script src="assets/js/controllers/establishmentController.js"></script>
 
     <!-- services -->
+    <script src="assets/js/services/searchService.js"></script>
+    <script src="assets/js/services/advancedSearchService.js"></script>
+    <script src="assets/js/services/registerService.js"></script>
+    <script src="assets/js/services/establishmentService.js"></script>
     
     <!-- directives -->
     <script src="assets/js/directives/tooltip.js"></script>

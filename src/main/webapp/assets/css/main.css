@@ -1,0 +1,65 @@
+.round-button {
+	border-radius: 50%;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+}
+.round-button-big {
+    border-radius: 50%;
+    padding: 0;
+    width: 200px;
+    height: 200px;
+    font-size: 50px;
+}
+
+.status {
+    padding: 5px 5px 0;
+    float: left;
+}
+
+.dot-5, .dot-4 {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+		background-color: green;
+
+}
+
+.dot-3 {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+		background-color: yellow;
+}
+
+.dot-2, .dot-1 {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+		background-color: red;
+}
+
+html, body {
+    height: 100%;
+}
+
+header {
+    height: 10%;
+}
+
+main {
+    height: 89%;
+}
+main > * {
+    margin-bottom: 30px;
+}
+
+.centralize-form {
+    height: 95%;
+    height: calc(100% - 30px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}

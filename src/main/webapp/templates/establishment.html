@@ -1,0 +1,16 @@
+<div>
+    <h2>{{establishment.name}}</h2>
+
+    <hr>
+
+    <p>{{establishment.description}}</p>
+    <p><b>Telefone:</b> {{establishment.telephone}}</p>
+    <p><b>Endereço:</b> {{establishment.address}}</p>
+    <p><b>Cidade:</b> {{establishment.city}}</p>
+    <p><b>Pais:</b> {{establishment.country}}</p>
+
+    <div ng-repeat="item in establishment.accessibilityItem">
+        <p><b>{{item.accessibility.name}}:</b> Nota - {{item.grade}}</p>
+    </div>
+
+</div>
