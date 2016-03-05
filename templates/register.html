@@ -1,82 +1,68 @@
-<!DOCTYPE html>
-<html lang="pt">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<div>
+    <h2>Adicionar estabelecimento</h2>
 
-    <title>Estabelecimento Acessível</title>
+    <form>
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" placeholder="Nome">
+        </div>
+        <div class="form-group">
+            <label for="description">Descrição</label>
+            <input type="text" class="form-control" id="description" placeholder="Descrição">
+        </div>
 
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  </head>
-  <body ng-app="eaApp">
-    <h1>Estabelecimento Acessível</h1>
+        <hr>
 
-    <div class="container" ng-controller="registerController">
-        <h2>Adicionar estabelecimento</h2>
-
-        <form>
-            <div class="form-group">
-                <label for="name">Nome</label>
-                <input type="text" class="form-control" id="name" placeholder="Nome">
-            </div>
-            <div class="form-group">
-                <label for="description">Descrição</label>
-                <input type="text" class="form-control" id="description" placeholder="Descrição">
-            </div>
-
-            <hr>
-
-            <h3>Acessibilidade</h3>
-            <div class="form-group" ng-repeat="item in accessibilityItens">
-                <label for="{{item.hash}}">{{item.name}}</label>
-                <input type="text" class="form-control" id="{{item.hash}}" placeholder="{{item.name}}">
-            </div>
-
-            <button ng-hide="showAddNewItem" ng-click="showAddNewItem();" type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Adicionar Novo Item" tooltip>
+        <h4>
+            Acessibilidade
+            <button ng-hide="showAddNewItem" ng-click="displayAddNewItem();" type="button" class="btn btn-default round-button" data-toggle="tooltip" data-placement="right" title="Adicionar Novo Item" tooltip>
                 <span class="fa fa-plus" aria-hidden="true"></span>
             </button>
-
-            <div ng-show="showAddNewItem">
-                <div class="form-group">
-                    <label for="addNewItem">Adicionar novo item</label>
-                    <input type="text" class="form-control" id="addNewItem" placeholder="Nome do novo item">
-                </div>
-
-                <div class="form-group">
-                    <label for="connectToCategory">Categorias</label>
-                    <input type="text" class="form-control" id="connectToCategory" placeholder="Categoria">
-                </div>
-
-                <button class="btn btn-default">Adicionar</button>
-                <button class="btn btn-danger" ng-click="cancelAddNewItem();">Cancelar</button>
+        </h4>
+        <div ng-show="showAddNewItem">
+            <div class="form-group">
+                <label for="addNewItem">Nome do item</label>
+                <input type="text" class="form-control" id="addNewItem" placeholder="Nome do item" ng-model="newItem.name">
             </div>
 
-          <button type="submit" class="btn btn-default">Adicionar</button>
-        </form>
-    </div>
-  
-    <!-- vendor libs -->
-    <script src="../assets/vendor/jquery/jquery-1.12.1.min.js"></script>
-    <script src="../assets/vendor/angular/angular.min.js"></script>
-    <script src="../assets/vendor/angular/angular-route.min.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-    
-    <!-- angular scripts -->
-    <script src="../assets/js/app.js"></script>
-    <script src="../assets/js/routes.js"></script>
+            <div class="form-group">
+                <label for="connectToCategory">
+                    Categorias
+                    <button ng-hide="showAddCategory" ng-click="displayAddCategory();" type="button" class="btn btn-default round-button" data-toggle="tooltip" data-placement="right" title="Adicionar Nova Categoria" tooltip>
+                        <span class="fa fa-plus"></span>
+                    </button>
+                </label>
+                <div ng-show="showAddCategory" class="form-inline">
+                    <input type="text" class="form-control" id="connectToCategory" placeholder="Categoria" ng-model="newItem.newCategory">
+                    <button class="btn btn-primary">Adicionar</button>
+                    <button class="btn btn-danger" ng-click="cancelAddCategory();">Cancelar</button>
+                </div>
 
-    <!-- controllers -->
-    <script src="../assets/js/controllers/homeController.js"></script>
-    <script src="../assets/js/controllers/searchController.js"></script>
-    <script src="../assets/js/controllers/advancedSearchController.js"></script>
-    <script src="../assets/js/controllers/registerController.js"></script>
-    <script src="../assets/js/controllers/stablishmentController.js"></script>
+                <div class="row">
+                    <div class="checkbox col-md-3 col-sm-6 col-xs-12" ng-repeat="item in accessibilityItens">
+                        <label>
+                          <input type="checkbox"> Check me out
+                        </label>
+                    </div>
+                </div>
+            </div>
 
-    <!-- services -->
-    
-    <!-- directives -->
-    <script src="../assets/js/directives/tooltip.js"></script>
-  </body>
-</html>
+            <button class="btn btn-default">Adicionar</button>
+            <button class="btn btn-danger" ng-click="cancelAddNewItem();">Cancelar</button>
+            
+            <hr>
+        </div>
+
+
+        <div class="row">
+            <div class="form-group col-md-3 col-sm-6 col-xs-12" ng-repeat="item in accessibilityItens">
+                <label for="{{item.hash}}">{{item.name}}</label>
+                <input type="number" class="form-control" id="{{item.hash}}" placeholder="valor de 0 a 5" min="0" max="5">
+            </div>
+        </div>
+
+        <hr>
+
+      <button type="submit" class="btn btn-default">Adicionar</button>
+    </form>
+</div>

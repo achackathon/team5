@@ -9,13 +9,7 @@
 
     <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <script type="text/javascript">
-      var estabelecimentos = [
-      {"nome": "New", "rating": "5"},
-      {"nome": "Open", "rating": "4"},
-      {"nome": "Close", "rating": "3"}
-    ]
-    </script>
+    <link href="../assets/css/main.css" rel="stylesheet">
   </head>
   <body ng-app="eaApp">
     <h1>4All</h1>
@@ -37,10 +31,10 @@
         <div ng-repeat="n in estabelecimentos">
           <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
             <div class="status">
-                <div class="bcRed dot">
+                <div class="bcRed dot-{{n.rating}}">
                 </div>
             </div>
-            <a href="#{{n.id}}">{{n.nome}} - {{n.rating}}</a>
+            <a href="#{{n.id}}">{{n.nome}} - {{n.tipo}}</a>
           </div>
         </div>
     </div>
@@ -60,7 +54,7 @@
     <script src="../assets/js/controllers/searchController.js"></script>
     <script src="../assets/js/controllers/advancedSearchController.js"></script>
     <script src="../assets/js/controllers/registerController.js"></script>
-    <script src="../assets/js/controllers/stablishmentController.js"></script>
+    <script src="../assets/js/controllers/establishmentController.js"></script>
 
     <!-- services -->
 

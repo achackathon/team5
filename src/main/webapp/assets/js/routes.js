@@ -24,8 +24,8 @@
 			resolve: {}
 		})
 		.when('/', {
-			templateUrl: 'templates/stablishment.html',
-			controller: 'stablishmentController',
+			templateUrl: 'templates/establishment.html',
+			controller: 'establishmentController',
 			resolve: {}
 		})
 		.otherwise({

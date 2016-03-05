@@ -99,7 +99,6 @@
             <groupId>br.com.six2six</groupId>
             <artifactId>fixture-factory</artifactId>
             <version>3.1.0</version>
-            <scope>test</scope>
             <type>jar</type>
         </dependency>
         <dependency>

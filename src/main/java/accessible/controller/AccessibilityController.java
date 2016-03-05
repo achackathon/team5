@@ -1,7 +1,7 @@
-package accessible;
+package accessible.controller;
 
+import accessible.dao.AccessibilityDAO;
 import accessible.model.Accessibility;
-import accessible.model.Place;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
@@ -34,9 +34,9 @@ public class AccessibilityController {
 
     @Get
     @Path({"accessibility/", "accessibility"})
-    public void lista() {
-        List accessibility = accessibilityDAO.list();
-        result.use(Results.json()).withoutRoot().from(accessibility).serialize();
+    public void list() {
+        List accessibilities = accessibilityDAO.list();
+        result.use(Results.json()).withoutRoot().from(accessibilities).serialize();
     }
 
     @Post

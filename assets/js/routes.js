@@ -8,24 +8,24 @@
 			controller: 'homeController',
 			resolve: {}
 		})
-		.when('/', {
+		.when('/search', {
 			templateUrl: 'templates/search.html',
 			controller: 'searchController',
 			resolve: {}
 		})
-		.when('/', {
+		.when('/advancedSearch', {
 			templateUrl: 'templates/advancedSearch.html',
 			controller: 'advancedSearchController',
 			resolve: {}
 		})
-		.when('/', {
+		.when('/register', {
 			templateUrl: 'templates/register.html',
 			controller: 'registerController',
 			resolve: {}
 		})
-		.when('/', {
-			templateUrl: 'templates/stablishment.html',
-			controller: 'stablishmentController',
+		.when('/establishment', {
+			templateUrl: 'templates/establishment.html',
+			controller: 'establishmentController',
 			resolve: {}
 		})
 		.otherwise({

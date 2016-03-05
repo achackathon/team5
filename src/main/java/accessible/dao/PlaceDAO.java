@@ -1,8 +1,9 @@
 
-package accessible;
+package accessible.dao;
 
 import accessible.model.Place;
-import java.util.ArrayList;
+import accessible.template.PlaceTemplate;
+import br.com.six2six.fixturefactory.Fixture;
 import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 
@@ -11,9 +12,14 @@ import javax.enterprise.context.ApplicationScoped;
  * @author Maison Chaves
  */
 @ApplicationScoped
-public  class PlacesDAO {
+public  class PlaceDAO {
 
-    List<Place> list = new ArrayList<>();
+    private final List<Place> list;
+    
+    public PlaceDAO() {
+        PlaceTemplate.load();
+        list = Fixture.from(Place.class).gimme(5, "valid");
+    }
 
     public List<Place> list() {
         return list;
