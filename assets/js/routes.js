@@ -4,8 +4,8 @@
 	eaApp.config(function($routeProvider, $locationProvider) {
 		$routeProvider
 		.when('/', {
-			templateUrl: 'templates/dashboard.html',
-			controller: 'dashboardController',
+			templateUrl: 'templates/home.html',
+			controller: 'homeController',
 			resolve: {}
 		})
 		.otherwise({
