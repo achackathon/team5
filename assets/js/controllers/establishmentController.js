@@ -1,7 +1,7 @@
 (function(eaApp, angular, $) {
 	'use strict';
 
-	eaApp.controller('stablishmentController', function($scope) {
+	eaApp.controller('establishmentController', function($scope) {
 		
 	});
 
