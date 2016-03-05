@@ -1,5 +1,5 @@
 
-package accessible;
+package accessible.dao;
 
 import accessible.model.Place;
 import java.util.ArrayList;

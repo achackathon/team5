@@ -1,5 +1,6 @@
-package accessible;
+package accessible.controller;
 
+import accessible.dao.PlacesDAO;
 import accessible.model.Place;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;

@@ -1,5 +1,5 @@
 
-package accessible;
+package accessible.dao;
 
 import accessible.model.Accessibility;
 import accessible.model.Place;

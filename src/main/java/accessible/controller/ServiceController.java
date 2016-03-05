@@ -1,4 +1,4 @@
-package accessible;
+package accessible.controller;
 
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;

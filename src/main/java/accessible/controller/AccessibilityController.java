@@ -1,5 +1,6 @@
-package accessible;
+package accessible.controller;
 
+import accessible.dao.AccessibilityDAO;
 import accessible.model.Accessibility;
 import accessible.model.Place;
 import br.com.caelum.vraptor.Controller;
