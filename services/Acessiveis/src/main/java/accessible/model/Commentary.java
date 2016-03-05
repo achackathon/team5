@@ -4,11 +4,11 @@ package accessible.model;
  *
  * @author jfranco
  */
-public class AccessibilityItem {
+public class Commentary {
     
     private Integer id;
-    private Integer grade;
-    private Accessibility accessibility;
+    private String text;
+    private String author;
     private Place place;
 
     /**
@@ -26,31 +26,31 @@ public class AccessibilityItem {
     }
 
     /**
-     * @return the grade
+     * @return the text
      */
-    public Integer getGrade() {
-        return grade;
+    public String getText() {
+        return text;
     }
 
     /**
-     * @param grade the grade to set
+     * @param text the text to set
      */
-    public void setGrade(Integer grade) {
-        this.grade = grade;
+    public void setText(String text) {
+        this.text = text;
     }
 
     /**
-     * @return the accessibility
+     * @return the author
      */
-    public Accessibility getAccessibility() {
-        return accessibility;
+    public String getAuthor() {
+        return author;
     }
 
     /**
-     * @param accessibility the accessibility to set
+     * @param author the author to set
      */
-    public void setAccessibility(Accessibility accessibility) {
-        this.accessibility = accessibility;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     /**

@@ -4,15 +4,18 @@ package accessible.model;
  *
  * @author jfranco
  */
-public class Places {
+public class Place {
     
     private Integer id;
     private String description;
     private String adress;
     private String city;
+    private String country;
     private String telephone;
     private String latitude;
     private String longitude;
+    private AccessibilityItem accessibilityItem;
+    private PlaceType placeType;
 
     /**
      * @return the id
@@ -110,6 +113,48 @@ public class Places {
      */
     public void setLongitude(String longitude) {
         this.longitude = longitude;
+    }
+
+    /**
+     * @return the accessibilityItem
+     */
+    public AccessibilityItem getAccessibilityItem() {
+        return accessibilityItem;
+    }
+
+    /**
+     * @param accessibilityItem the accessibilityItem to set
+     */
+    public void setAccessibilityItem(AccessibilityItem accessibilityItem) {
+        this.accessibilityItem = accessibilityItem;
+    }
+
+    /**
+     * @return the placeType
+     */
+    public PlaceType getPlaceType() {
+        return placeType;
+    }
+
+    /**
+     * @param placeType the placeType to set
+     */
+    public void setPlaceType(PlaceType placeType) {
+        this.placeType = placeType;
+    }
+
+    /**
+     * @return the country
+     */
+    public String getCountry() {
+        return country;
+    }
+
+    /**
+     * @param country the country to set
+     */
+    public void setCountry(String country) {
+        this.country = country;
     }
     
 }
