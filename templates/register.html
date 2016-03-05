@@ -4,11 +4,11 @@
     <form>
         <div class="form-group">
             <label for="name">Nome</label>
-            <input type="text" class="form-control" id="name" placeholder="Nome">
+            <input type="text" class="form-control" id="name" placeholder="Nome" ng-model="obj.name">
         </div>
         <div class="form-group">
             <label for="description">Descrição</label>
-            <input type="text" class="form-control" id="description" placeholder="Descrição">
+            <input type="text" class="form-control" id="description" placeholder="Descrição" ng-model="obj.description">
         </div>
 
         <hr>
@@ -39,15 +39,15 @@
                 </div>
 
                 <div class="row">
-                    <div class="checkbox col-md-3 col-sm-6 col-xs-12" ng-repeat="item in accessibilityItens">
+                    <div class="form-group col-md-3 col-sm-6 col-xs-12" ng-repeat="category in categories">
                         <label>
-                          <input type="checkbox"> Check me out
+                          <input type="checkbox" ng-model="category.checked" ng-change="handlerCategory(category)"> {{category.name}}
                         </label>
                     </div>
                 </div>
             </div>
 
-            <button class="btn btn-default">Adicionar</button>
+            <button class="btn btn-default" ng-click="addNewItem()">Adicionar</button>
             <button class="btn btn-danger" ng-click="cancelAddNewItem();">Cancelar</button>
             
             <hr>
@@ -55,9 +55,12 @@
 
 
         <div class="row">
-            <div class="form-group col-md-3 col-sm-6 col-xs-12" ng-repeat="item in accessibilityItens">
-                <label for="{{item.hash}}">{{item.name}}</label>
-                <input type="number" class="form-control" id="{{item.hash}}" placeholder="valor de 0 a 5" min="0" max="5">
+            <div class="form-group col-md-3 col-sm-6 col-xs-12" ng-repeat="item in accessibilityItems">
+                <label>
+                    <input type="checkbox" ng-model="item.checked" ng-change="handleNewItem(item)"> {{item.name}}
+                </label>
+                <!-- TODO trocar para cinco estrelas -->
+                <input type="number" class="form-control" placeholder="valor de 0 a 5" min="0" max="5" ng-model="item.rate">
             </div>
         </div>
 
