@@ -1,7 +1,8 @@
 package accessible.dao;
 
 import accessible.model.Category;
-import java.util.ArrayList;
+import accessible.template.CategoryTemplate;
+import br.com.six2six.fixturefactory.Fixture;
 import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
 
@@ -12,8 +13,13 @@ import javax.enterprise.context.ApplicationScoped;
 @ApplicationScoped
 public class CategoryDAO {
     
-    List<Category> list = new ArrayList<>();
+    private List<Category> list;
 
+    public CategoryDAO() {
+        CategoryTemplate.load();
+        list = Fixture.from(Category.class).gimme(6, "valid");
+    }
+    
     public List<Category> list() {
         return list;
     }
