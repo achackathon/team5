@@ -1,9 +1,7 @@
 package accessible.dao;
 
 import accessible.model.Commentary;
-import accessible.model.Place;
 import accessible.template.CommentaryTemplate;
-import accessible.template.PlaceTemplate;
 import br.com.six2six.fixturefactory.Fixture;
 import java.util.ArrayList;
 import java.util.List;

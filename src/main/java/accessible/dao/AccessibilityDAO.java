@@ -2,6 +2,9 @@
 package accessible.dao;
 
 import accessible.model.Accessibility;
+import accessible.model.Commentary;
+import accessible.template.AccessibilityTemplate;
+import br.com.six2six.fixturefactory.Fixture;
 import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
@@ -12,6 +15,11 @@ import javax.enterprise.context.ApplicationScoped;
  */
 @ApplicationScoped
 public  class AccessibilityDAO {
+    
+    public AccessibilityDAO() {
+        AccessibilityTemplate.load();
+        list = Fixture.from(Commentary.class).gimme(2, "valid");
+    }
 
     List<Accessibility> list = new ArrayList<>();
 
