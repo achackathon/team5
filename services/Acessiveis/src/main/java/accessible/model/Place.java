@@ -10,6 +10,7 @@ public class Place {
     private String description;
     private String adress;
     private String city;
+    private String country;
     private String telephone;
     private String latitude;
     private String longitude;
@@ -140,6 +141,20 @@ public class Place {
      */
     public void setPlaceType(PlaceType placeType) {
         this.placeType = placeType;
+    }
+
+    /**
+     * @return the country
+     */
+    public String getCountry() {
+        return country;
+    }
+
+    /**
+     * @param country the country to set
+     */
+    public void setCountry(String country) {
+        this.country = country;
     }
     
 }
