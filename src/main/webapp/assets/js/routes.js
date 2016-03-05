@@ -8,22 +8,22 @@
 			controller: 'homeController',
 			resolve: {}
 		})
-		.when('/', {
+		.when('/search', {
 			templateUrl: 'templates/search.html',
 			controller: 'searchController',
 			resolve: {}
 		})
-		.when('/', {
+		.when('/advancedSearch', {
 			templateUrl: 'templates/advancedSearch.html',
 			controller: 'advancedSearchController',
 			resolve: {}
 		})
-		.when('/', {
+		.when('/register', {
 			templateUrl: 'templates/register.html',
 			controller: 'registerController',
 			resolve: {}
 		})
-		.when('/', {
+		.when('/establishment/:establishmentId', {
 			templateUrl: 'templates/establishment.html',
 			controller: 'establishmentController',
 			resolve: {}

@@ -52,7 +52,7 @@ public class AccessibilityCategoryController {
     @Path(value = {"accessibilityCategory/{id}/"}, priority = Path.HIGH)
     public void load(Integer id) {
         AccessibilityCategory accessibilityCategory = accessibilityCategoryDAO.load(id);
-        result.use(Results.json()).from(accessibilityCategory).serialize();
+        result.use(Results.json()).withoutRoot().from(accessibilityCategory).serialize();
     }
 
     @Post

@@ -1,0 +1,24 @@
+<div class="container" ng-controller="searchController">
+    <h2>Pesquisar estabelecimento</h2>
+
+    <form>
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" placeholder="Nome">
+        </div>
+
+        <hr>
+        <div class="form-group">
+            <button class="btn btn-default">Pesquisar</button>
+        </div>
+    </form>
+    <div ng-repeat="n in estabelecimentos">
+        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <div class="status">
+                <div class="bcRed dot-{{n.rating}}">
+                </div>
+            </div>
+            <a href="#/establishment/{{n.id}}">{{n.nome}} - {{n.tipo}}</a>
+        </div>
+    </div>
+</div>
