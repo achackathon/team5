@@ -27,13 +27,12 @@
               <div class="fa fa-search" aria-hidden="true"></div>
             </div>
           </div>
-
             <hr>
         </form>
         <div ng-repeat="n in estabelecimentos">
           <a href="#{{n.id}}">
             <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 linha">
-              <div class="status">
+              <div class="status" data-toggle="tooltip" data-placement="bottom" title="{{status[n.rating]}}" tooltip>
                   <div class="bcRed dot-{{n.rating}}">
                   </div>
               </div>
@@ -42,7 +41,6 @@
           </a>
         </div>
     </div>
-
     <!-- vendor libs -->
     <script src="../assets/vendor/jquery/jquery-1.12.1.min.js"></script>
     <script src="../assets/vendor/angular/angular.min.js"></script>
