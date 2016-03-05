@@ -14,8 +14,13 @@
 }
 
 .status {
-    padding: 5px 5px 0;
+    padding: 5px 15px 0;
     float: left;
+}
+
+.linha {
+	padding-bottom: 20px;
+	font-size: 20px;
 }
 
 .dot-5, .dot-4 {
@@ -23,7 +28,6 @@
     height: 10px;
     border-radius: 5px;
 		background-color: green;
-
 }
 
 .dot-3 {

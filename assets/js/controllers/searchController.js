@@ -7,6 +7,9 @@
 		{"id" : 2, "nome": "Mc Donalds", "rating": "2", "tipo": "Bar"},
 		{"id" : 3, "nome": "Burguer king", "rating": "3", "tipo": "Restaurante"}
 	];
+	$scope.status = [
+		"Ruim", "Ruim", "Ruim", "Regular", "Bom", "Bom"
+];
 	});
 
 })(angular.module('eaApp'), window.angular, window.jQuery);
