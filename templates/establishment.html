@@ -23,7 +23,15 @@
     <div class="row">
         <div ng-repeat="item in establishment.accessibilityItem" class="form-group col-md-6 col-xs-12 col-sm-12 col-lg-6">
             <h3>{{item.accessibility.name}}</h3>
-            <p><b>Nota:</b> {{item.grade}}</p>
+
+            <div star-rating ng-model="item.grade" max="6"></div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px">
+        <div class="form-group col-xs-12">
+            <button class="btn btn-default" ng-click="updatePlace()">
+                Atualizar
+            </button>
         </div>
     </div>
 

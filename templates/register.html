@@ -59,8 +59,8 @@
                 <label>
                     <input type="checkbox" ng-model="item.checked" ng-change="handleNewItem(item)"> {{item.name}}
                 </label>
-                <!-- TODO trocar para cinco estrelas -->
-                <input type="number" class="form-control" placeholder="valor de 0 a 5" min="0" max="5" ng-model="item.grade">
+
+                <div star-rating ng-model="item.grade" max="6"></div>
             </div>
         </div>
 

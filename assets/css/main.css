@@ -14,7 +14,7 @@
 }
 
 .status {
-    padding: 10px 20px 0;
+    padding: 3px 60px 0 20px;
     float: left;
 }
 
@@ -22,7 +22,9 @@
     width: 10px;
     height: 10px;
     border-radius: 5px;
-		background-color: green;
+        font-size: 15px;
+        text-shadow: 1px 1px 0px #ccc;
+		color: green;
 
 }
 
@@ -30,20 +32,26 @@
     width: 10px;
     height: 10px;
     border-radius: 5px;
-		background-color: yellow;
+        font-size: 15px;
+    text-shadow: 1px 1px 0px #ccc;
+    color: #D0B907;
 }
 
 .dot-2, .dot-1 {
     width: 10px;
     height: 10px;
     border-radius: 5px;
-        background-color: red;
+        font-size: 15px;
+        text-shadow: 1px 1px 0px #ccc;
+        color: red;
 }
 .dot-0 {
     width: 10px;
     height: 10px;
     border-radius: 5px;
-		background-color: gray;
+        font-size: 15px;
+        text-shadow: 1px 1px 0px #ccc;
+		color: gray;
 }
 
 html, body {
@@ -112,4 +120,26 @@ form.search {
 }
 .results .result a {
     display: inline-block;
+}
+.star-rating {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.star-rating .star {
+    padding: 1px;
+    color: #ddd;
+    font-size: 20px;
+    text-shadow: .05em .05em #aaa;
+    list-style-type: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.star-rating .star.filled {
+  color: #fd0;
+}
+
+.star-rating .star.readonly .star.filled {
+color: #666;
 }

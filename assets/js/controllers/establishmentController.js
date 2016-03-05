@@ -11,6 +11,10 @@
         $scope.$on('$viewContentLoaded', function () {
             _loadEstablishment($routeParams.establishmentId);
         });
+
+        $scope.updatePlace = function() {
+
+        };
     });
 
 })(angular.module('eaApp'), window.angular, window.jQuery);
