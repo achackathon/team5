@@ -2,7 +2,6 @@ package accessible.controller;
 
 import accessible.dao.AccessibilityDAO;
 import accessible.model.Accessibility;
-import accessible.model.Place;
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
