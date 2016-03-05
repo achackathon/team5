@@ -16,25 +16,25 @@ import javax.inject.Inject;
  * @author Maison Chaves
  */
 @Controller
-public class PlacesController {
+public class PlaceController {
 
     private final Result result;
     private final PlaceDAO placesDAO;
 
-    public PlacesController() {
+    public PlaceController() {
         this.result = null;
         this.placesDAO = null;
     }
     
     @Inject
-    public PlacesController(Result result, PlaceDAO placesDAO) {
+    public PlaceController(Result result, PlaceDAO placesDAO) {
         this.result = result;
         this.placesDAO = placesDAO;
     }
 
     @Get
     @Path({"places/", "places"})
-    public void lista() {
+    public void list() {
         List places = placesDAO.list();
         result.use(Results.json()).withoutRoot().from(places)
                 .include("accessibilityItem")

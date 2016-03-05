@@ -11,7 +11,7 @@ public class Accessibility {
     private Integer id;
     private String name;
     private String description;
-    private List<AccessibiltyCategory> accessibiltyCategory;
+    private List<AccessibilityCategory> accessibiltyCategory;
 
     /**
      * @return the id
@@ -58,14 +58,14 @@ public class Accessibility {
     /**
      * @return the accessibiltyCategory
      */
-    public List<AccessibiltyCategory> getAccessibiltyCategory() {
+    public List<AccessibilityCategory> getAccessibiltyCategory() {
         return accessibiltyCategory;
     }
 
     /**
      * @param accessibiltyCategory the accessibiltyCategory to set
      */
-    public void setAccessibiltyCategory(List<AccessibiltyCategory> accessibiltyCategory) {
+    public void setAccessibiltyCategory(List<AccessibilityCategory> accessibiltyCategory) {
         this.accessibiltyCategory = accessibiltyCategory;
     }
    

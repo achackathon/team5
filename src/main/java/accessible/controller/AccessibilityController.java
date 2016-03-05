@@ -34,9 +34,9 @@ public class AccessibilityController {
 
     @Get
     @Path({"accessibility/", "accessibility"})
-    public void lista() {
-        List accessibility = accessibilityDAO.list();
-        result.use(Results.json()).withoutRoot().from(accessibility).serialize();
+    public void list() {
+        List accessibilities = accessibilityDAO.list();
+        result.use(Results.json()).withoutRoot().from(accessibilities).serialize();
     }
 
     @Post

@@ -4,7 +4,7 @@ package accessible.model;
  *
  * @author jfranco
  */
-public class AccessibiltyCategory {
+public class AccessibilityCategory {
     
     private Integer id;
     private String name;
