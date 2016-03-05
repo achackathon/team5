@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Estabelecimento Acessível</title>
+
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript">
+      var estabelecimentos = [
+      {"nome": "New", "rating": "5"},
+      {"nome": "Open", "rating": "4"},
+      {"nome": "Close", "rating": "3"}
+    ]
+    </script>
+  </head>
+  <body ng-app="eaApp">
+    <h1>4All</h1>
+
+    <div class="container" ng-controller="searchController">
+        <h2>Pesquisar estabelecimento</h2>
+
+        <form>
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" class="form-control" id="name" placeholder="Nome">
+            </div>
+
+            <hr>
+            <div class="form-group">
+                <button class="btn btn-default">Pesquisar</button>
+            </div>
+        </form>
+        <div ng-repeat="n in estabelecimentos">
+          <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <div class="status">
+                <div class="bcRed dot">
+                </div>
+            </div>
+            <a href="#{{n.id}}">{{n.nome}} - {{n.rating}}</a>
+          </div>
+        </div>
+    </div>
+
+    <!-- vendor libs -->
+    <script src="../assets/vendor/jquery/jquery-1.12.1.min.js"></script>
+    <script src="../assets/vendor/angular/angular.min.js"></script>
+    <script src="../assets/vendor/angular/angular-route.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- angular scripts -->
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/routes.js"></script>
+
+    <!-- controllers -->
+    <script src="../assets/js/controllers/homeController.js"></script>
+    <script src="../assets/js/controllers/searchController.js"></script>
+    <script src="../assets/js/controllers/advancedSearchController.js"></script>
+    <script src="../assets/js/controllers/registerController.js"></script>
+    <script src="../assets/js/controllers/stablishmentController.js"></script>
+
+    <!-- services -->
+
+    <!-- directives -->
+    <script src="../assets/js/directives/tooltip.js"></script>
+  </body>
+</html>
