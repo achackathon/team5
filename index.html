@@ -7,13 +7,37 @@
 
     <title>Estabelecimento Acessível</title>
 
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   </head>
-  <body>
-    <h1>Hello, world!</h1>
+  <body ng-app="eaApp">
+    <h1>Estabelecimento Acessível</h1>
+  
+    <span data-toggle="tooltip" data-placement="bottom" title="bottom tooltip" tooltip>Tooltip Example</span>
 
-    <script src="assets/jquery/jquery-1.12.1.min.js"></script>
-    <script src="assets/angular/angular.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <div ng-view>
+    </div>
+  
+
+    <!-- vendor libs -->
+    <script src="assets/vendor/jquery/jquery-1.12.1.min.js"></script>
+    <script src="assets/vendor/angular/angular.min.js"></script>
+    <script src="assets/vendor/angular/angular-route.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    
+    <!-- angular scripts -->
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/routes.js"></script>
+
+    <!-- controllers -->
+    <script src="assets/js/controllers/homeController.js"></script>
+    <script src="assets/js/controllers/searchController.js"></script>
+    <script src="assets/js/controllers/advancedSearchController.js"></script>
+    <script src="assets/js/controllers/registerController.js"></script>
+    <script src="assets/js/controllers/stablishmentController.js"></script>
+
+    <!-- services -->
+    
+    <!-- directives -->
+    <script src="assets/js/directives/tooltip.js"></script>
   </body>
 </html>
