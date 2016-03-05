@@ -17,7 +17,7 @@
     <div class="results">
 
       <div ng-repeat="result in results">
-        <a href="#/places/{{result.id || $index}}">
+        <a href="#/establishment/{{result.id || $index}}">
           <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12 linha result">
             <div class="status" data-toggle="tooltip" data-placement="bottom" title="{{status[result.grade]}}" tooltip>
                 <div class="bcRed dot-{{result.grade}}">
