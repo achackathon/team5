@@ -1,5 +1,6 @@
 package accessible;
 
+import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import javax.inject.Inject;
@@ -8,6 +9,7 @@ import javax.inject.Inject;
  *
  * @author Maison Chaves
  */
+@Controller
 public class ServiceController {
 
     private final Result result;
