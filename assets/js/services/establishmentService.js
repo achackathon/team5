@@ -1,12 +1,8 @@
-(function (eaApp, angular, $) {
-    'use strict';
+(function(eaApp, angular, $) {
+	'use strict';
 
-    eaApp.service('establishmentService', function ($http) {
-        return {
-            load: function (id) {
-                return $http.get('places/' + id + '/');
-            }
-        }
-    });
+	eaApp.service('establishmentService', function($http) {
+		
+	});
 
 })(angular.module('eaApp'), window.angular, window.jQuery);

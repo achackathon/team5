@@ -42,7 +42,9 @@
 
 		$scope.handleNewItem = function(item) {
 			if(item.checked) {
-				$scope.obj.accessibilityItem.push(item);
+				$scope.obj.accessibilityItem.push({
+					accessibility: item
+				});
 			}
 			else {
 				$scope.removeItem(item.name);
@@ -71,7 +73,7 @@
 			var i = $scope.obj.accessibilityItem.length;
 
 			while(i--) {
-				if($scope.obj.accessibilityItem[i].name == name) {
+				if($scope.obj.accessibilityItem[i].accessibility.name == name) {
 					$scope.obj.accessibilityItem.splice(i, 1);
 				}
 			}
@@ -107,7 +109,7 @@
 			var i;
 
 			for(i=0; i<$scope.obj.accessibilityItem.length; i++) {
-				$scope.obj.accessibilityItem[i].accessibility = $scope.obj.accessibilityItem[i].name;
+				$scope.obj.accessibilityItem[i].grade = $scope.obj.accessibilityItem[i].accessibility.grade;
 			}
 			registerService.addEstablishment($scope.obj).success(function(data) {
 

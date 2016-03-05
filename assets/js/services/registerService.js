@@ -7,13 +7,13 @@
 				return $http.post('accessibility', newItem);
 			},
 			addCategory: function(newCategory) {
-				return $http.post('category', newCategory);
+				return $http.post('accessibilityCategory', newCategory);
 			},
 			listAccessibility: function() {
 				return $http.get('accessibility');
 			},
 			listCategories: function() {
-				return $http.get('category');
+				return $http.get('accessibilityCategory');
 			},
 			addEstablishment: function(newEstablishment) {
 				return $http.post('places', newEstablishment);

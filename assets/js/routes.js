@@ -11,7 +11,11 @@
 		.when('/search', {
 			templateUrl: 'templates/search.html',
 			controller: 'searchController',
-			resolve: {}
+			resolve: {
+				categories: function(searchService) {
+					return searchService.listCategories();
+				}
+			}
 		})
 		.when('/advancedSearch', {
 			templateUrl: 'templates/advancedSearch.html',
@@ -30,7 +34,7 @@
 				}
 			}
 		})
-		.when('/establishment/:establishmentId', {
+		.when('/establishment', {
 			templateUrl: 'templates/establishment.html',
 			controller: 'establishmentController',
 			resolve: {}
